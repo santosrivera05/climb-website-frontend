@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+.exec-container {
+  background-color: red;
+  clip-path: polygon(0 0, 100% 0, 40% 100%, 0% 100%);
+}
+
+.valid { 
+  color: green;
+  display: inline;
+}
+.invalid {
+  color: red;
+  display: inline;
+}
+.hide {
+  display: none;
+} 
+/* CSS for check and cross icons */
+.errmsg {
+  color: red;
+  background: #ffe6e6;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.navbar {
+  font-family: 'Staatliches', cursive;
+  background-color: #233EA1;
+}
+
+.navbar-links:hover {
+  color: #D7263D;
+  cursor: pointer;
+}
+
+.staatliches {
+  font-family: 'Staatliches', cursive;
+}
+
+.elliott-container {
+  clip-path: polygon(0 0, 0% 0%, 23% 6%, 100% 45%, 100% 100%, 0% 100%);
+}
