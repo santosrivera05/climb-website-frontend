@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://depaulclimbing.com';
 // api will be on port 3500
 // axios will be on port 3000 <- this is what server.js is on
 

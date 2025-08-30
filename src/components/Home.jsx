@@ -107,7 +107,7 @@ function Home() {
               <div className="bg-white shadow-lg w-60">
                 <div className="bg-gray-200 h-60 flex items-center justify-center">
                   <img
-                    src="../../img/woj.jpg"
+                    src="../../img/lucas.jpg"
                     alt="Lucas Pazen"
                     className="object-cover h-full w-full"
                   />
