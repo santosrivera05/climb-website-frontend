@@ -8,14 +8,14 @@ function Exec() {
     const axiosPrivate = useAxiosPrivate();
 
     useEffect(() => {
-        fetch('http://localhost:3000/users')
+        fetch('https://your-backend-service.up.railway.app/users')
             .then(res => res.json())
             .then(data => setData(data))
             .catch(err => console.log(err));
     }, []);
 
     useEffect(() => {
-        fetch('http://localhost:3000/check-ins')
+        fetch('https://your-backend-service.up.railway.app/check-ins')
             .then(res => res.json())
             .then(data => setCheckInData(data))
             .catch(err => console.log(err));
