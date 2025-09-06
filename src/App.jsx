@@ -33,9 +33,17 @@ function App() {
 
   useEffect(() => {
     const initializeAuth = async () => {
-      const storedUser = JSON.parse(localStorage.getItem('user'));
-      if (storedUser) setAuth(prev => ({ ...prev, user: storedUser }));
-      
+      try {
+      const stored = localStorage.getItem("user");
+      const storedUser = stored ? JSON.parse(stored) : null;
+      if (storedUser) {
+        setAuth(prev => ({ ...prev, user: storedUser }));
+      }
+    } catch (error) {
+      console.log('Error parsing user from localStorage:', error);
+      localStorage.removeItem("user");
+    }
+
       try {
         await refresh(); // Wait for refresh to complete
       } catch (error) {
