@@ -17,7 +17,7 @@ const ForgotPassword = () => {
             setOTP(OTP);
 
             try {
-                await axios.post(`${process.env.BACKEND_URL}/send-recovery-email`, { OTP, recipient_email: email });
+                await axios.post(`${import.meta.env.BACKEND_URL}/send-recovery-email`, { OTP, recipient_email: email });
                 navigate('/otp', { state: { email, OTP } });
             } catch (err) {
                 console.error("Error sending OTP:", err.response?.data?.message || err.message);

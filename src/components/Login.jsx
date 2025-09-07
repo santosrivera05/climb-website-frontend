@@ -32,7 +32,7 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post(`${process.env.BACKEND_URL}/auth`,
+            const response = await axios.post(`${import.meta.env.BACKEND_URL}/auth`,
                 JSON.stringify({ user, pwd }),
                 {
                     headers: { 'Content-Type': 'application/json' },
