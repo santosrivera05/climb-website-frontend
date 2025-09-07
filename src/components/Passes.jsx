@@ -20,7 +20,7 @@ function Passes() {
 
         const stripe = await loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE); // Stripe publishable key
 
-        const response = await axiosPrivate.post(`${import.meta.env.BACKEND_URL}/purchase-passes`, {
+        const response = await axiosPrivate.post(`${import.meta.env.VITE_BACKEND_URL}/purchase-passes`, {
             email: auth?.user?.Email,
             passes: passQuantity,
             price: passQuantity *15 // Pass price set to $15 each
@@ -41,7 +41,7 @@ function Passes() {
 
         const stripe = await loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE); // Stripe publishable key
 
-        const response = await axiosPrivate.post(`${import.meta.env.BACKEND_URL}/purchase-dues`, {
+        const response = await axiosPrivate.post(`${import.meta.env.VITE_BACKEND_URL}/purchase-dues`, {
             email: auth?.user.Email,
             price: 10
         });

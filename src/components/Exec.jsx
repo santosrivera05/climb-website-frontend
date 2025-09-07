@@ -8,14 +8,14 @@ function Exec() {
     const axiosPrivate = useAxiosPrivate();
 
     useEffect(() => {
-        fetch(`${import.meta.env.BACKEND_URL}/users`)
+        fetch(`${import.meta.env.VITE_BACKEND_URL}/users`)
             .then(res => res.json())
             .then(data => setData(data))
             .catch(err => console.log(err));
     }, []);
 
     useEffect(() => {
-        fetch(`${import.meta.env.BACKEND_URL}/check-ins`)
+        fetch(`${import.meta.env.VITE_BACKEND_URL}/check-ins`)
             .then(res => res.json())
             .then(data => setCheckInData(data))
             .catch(err => console.log(err));

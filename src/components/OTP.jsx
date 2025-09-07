@@ -26,7 +26,7 @@ const OTP = () => {
             console.log(`OTP for ${email} is: ${currentOTP}`);
 
 
-        axios.post(`${import.meta.env.BACKEND_URL}/send-recovery-email`, {OTP: currentOTP, recipient_email: email})
+        axios.post(`${import.meta.env.VITE_BACKEND_URL}/send-recovery-email`, {OTP: currentOTP, recipient_email: email})
         .then(() => {
             setDisable(true);
             setTimer(60);
@@ -43,11 +43,11 @@ async function verifyOTP() {
     }
     if (parseInt(OTPinput.join("")) === currentOTP) {
         if(!firstName) {
-            navigate(`${import.meta.env.BACKEND_URL}/reset-password`, { state: { email, verified: true } });
+            navigate(`${import.meta.env.VITE_BACKEND_URL}/reset-password`, { state: { email, verified: true } });
             return;
         } else {
             try {
-                const response = await axios.post(`${import.meta.env.BACKEND_URL}/register`,
+                const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/register`,
                     JSON.stringify({
                         email,
                         pwd,

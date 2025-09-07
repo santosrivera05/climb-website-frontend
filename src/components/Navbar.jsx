@@ -11,7 +11,7 @@ function Navbar() {
     setAuth(null);
     localStorage.clear();
     try {
-      const response = await axios.post(`${import.meta.env.BACKEND_URL}/logout`, {}, {
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/logout`, {}, {
         withCredentials: true
       });
       console.log(auth);

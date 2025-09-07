@@ -39,7 +39,7 @@ const ResetPassword = ({ email }) => {
             return;
         }
         try {
-            const response = await axios.post(`${import.meta.env.BACKEND_URL}/reset-password`,
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/reset-password`,
                 JSON.stringify({ email, pwd}),
                 {
                     headers: { 'Content-Type': 'application/json' }
