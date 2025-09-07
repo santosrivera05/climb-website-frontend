@@ -8,14 +8,14 @@ function Exec() {
     const axiosPrivate = useAxiosPrivate();
 
     useEffect(() => {
-        fetch('https://climb-website-backend-production.up.railway.app/users')
+        fetch(`${process.env.BACKEND_URL}/users`)
             .then(res => res.json())
             .then(data => setData(data))
             .catch(err => console.log(err));
     }, []);
 
     useEffect(() => {
-        fetch('https://climb-website-backend-production.up.railway.app/check-ins')
+        fetch(`${process.env.BACKEND_URL}/check-ins`)
             .then(res => res.json())
             .then(data => setCheckInData(data))
             .catch(err => console.log(err));

@@ -68,8 +68,8 @@ const Register = () => {
             setOTP(OTP);
         
         try {
-            const response = await axios.post('/send-recovery-email',
-                JSON.stringify({ 
+            const response = await axios.post(`${process.env.BACKEND_URL}/send-recovery-email`, // might cause a bug
+                JSON.stringify({
                     recipient_email: email,
                     pwd,
                     firstName: firstName.trim(), 
