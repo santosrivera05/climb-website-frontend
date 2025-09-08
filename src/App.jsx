@@ -80,7 +80,6 @@ function App() {
         <Route element={<RequireAuth allowedRoles={[ROLES.Admin]}/>}>
           <Route path='/exec' element={<Exec/>}/>
         </Route>
-        <Route path='/passes' element={<Passes/>}/>
         <Route path='/unauthorized' element={<Unauthorized/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>

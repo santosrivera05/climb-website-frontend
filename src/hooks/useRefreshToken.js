@@ -6,7 +6,7 @@ const useRefreshToken = () => {
 
     const refresh = async () => {
         try {
-        const response = await axios.get('/refresh', {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/refresh`, {
             withCredentials: true
         });
         setAuth(prev => {

@@ -133,7 +133,7 @@ function Passes() {
                             <option value={10}>10 Passes - $150.00</option> 
                         </select>
                         { auth?.user?.Dues === 0 || !auth?.user ?
-                        <button className="ml-2 bg-gray-400 text-white px-2 py-1 hover:cursor-pointer" disabled={true}
+                        <button className="ml-2 bg-gray-400 text-white px-2 py-1 hover:cursor-not-allowed" disabled={true}
                         >
                             Buy
                         </button>
@@ -150,7 +150,7 @@ function Passes() {
                     <div className="flex justify-center">
                         <p className="border-2 border-[#233EA1] px-6 py-1 ml-1/2">$10</p>
                         { !auth?.user ?
-                        <button className="ml-2 bg-gray-400 text-white px-2 py-1 hover:cursor-pointer" disabled={true}
+                        <button className="ml-2 bg-gray-400 text-white px-2 py-1 hover:cursor-not-allowed" disabled={true}
                         >
                             Buy
                         </button>
