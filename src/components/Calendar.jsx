@@ -10,13 +10,19 @@ const Calendar = () => {
       date: new Date(2025, 8, 12), // Sept 12 2025
       title: 'INVOLVEMENT FAIR',
       location: '@DEPAUL QUAD',
-      time: '12:00PM-4:00PM',
+      time: '1:00PM-4:00PM',
     },
     {
       date: new Date(2025, 8, 19), // Sept 19 2025
       title: 'CLUB MEETING',
       location: '@LP',
       time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2025, 8, 20), // Sept 20 2025
+      title: 'CHI-TOWN COMP',
+      location: '@WRIG',
+      time: 'FINALS @ 6',
     },
     {
       date: new Date(2025, 8, 24), // Sept 24 2025
@@ -31,13 +37,85 @@ const Calendar = () => {
       time: '1:00PM-4:00PM',
     },
     {
-      date: new Date(2025, 9, 1), // Oct 3 2025
+      date: new Date(2025, 9, 1), // Oct 1 2025
       title: 'CLUB MEETING',
       location: '@LP',
       time: '6:00PM-9:00PM',
     },
     {
       date: new Date(2025, 9, 3), // Oct 3 2025
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2025, 9, 8), // Oct 8 2025
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2025, 9, 10), // Oct 10 2025
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2025, 9, 15), // Oct 15 2025
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2025, 9, 17), // Oct 17 2025
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2025, 9, 22), // Oct 22 2025
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2025, 9, 24), // Oct 24 2025
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2025, 9, 29), // Oct 29 2025
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2025, 9, 31), // Oct 31 2025
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2025, 10, 5), // Nov 5 2025
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2025, 10, 7), // Nov 7 2025
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2025, 10, 12), // Nov 12 2025
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2025, 10, 14), // Nov 14 2025
       title: 'CLUB MEETING',
       location: '@WRIG',
       time: '1:00PM-4:00PM',
@@ -147,11 +225,6 @@ const Calendar = () => {
 
                     <ul className="list-disc list-outside space-y-2 text-2xl mt-4 ml-4 pl-6">
                         <li>5 minute walk from red line North/Clyborn station</li>
-                        <li>LP has it's own parking garage</li>
-                        <ul className="list-disc list-outside ml-4 text-xl">
-                            <li>Reminder to ask Lucas for prices</li>
-                        </ul>
-                        <li>LP also validates for parking garage across the street</li>
                     </ul>
                 </div>
 

@@ -13,16 +13,6 @@ const FirstTimeChecklist = () => {
             {/* Box 1 */}
             <div className="bg-[#233EA1] w-72 h-84 text-center tracking-wide">
                 <ol className="list-decimal list-inside text-3xl p-2">
-                    <li value="1">Buy 1 Day Pass and Pay Club Dues</li>
-                </ol>
-                <div className="flex flex-col p-2 text-left ml-2 gap-2">
-                    <p className="text-lg">Both must be purchased before entering a meeting</p>
-                    <p className="text-md">*If you have a Movement membership then you only need to pay dues each quarter</p>
-                </div>
-            </div>
-            {/* Box 2 */}
-            <div className="bg-[#233EA1] w-72 h-84 text-center tracking-wide">
-                <ol className="list-decimal list-inside text-3xl p-2">
                     <li value="2">Fill out movement's liability waiver</li>
                 </ol>
                 <div className="flex flex-col p-2 text-left ml-2 gap-2">
@@ -38,14 +28,14 @@ const FirstTimeChecklist = () => {
                     </p>
                 </div>
             </div>
-            {/* Box 3 */}
+            {/* Box 2 */}
             <div className="bg-[#233EA1] w-72 h-84 text-center tracking-wide">
                 <ol className="list-decimal list-inside text-3xl p-2">
                     <li value="3">Fill out depaul club sports waiver</li>
                 </ol>
                 <div className="flex flex-col p-2 text-left ml-2 gap-2">
                     <p className="text-lg">fill out&nbsp;
-                      <a href="#"
+                      <a href="https://dehub.depaul.edu/cgtest/survey?survey_uid=f26a18c0-990e-11e9-a04e-0a85c368333a"
                       className="hover:cursor-pointer underline"
                       target="_blank" rel="noopener noreferrer">
                       this form</a>
@@ -53,13 +43,7 @@ const FirstTimeChecklist = () => {
                     </p>
                 </div>
             </div>
-
-        </div>
-
-        {/* Row 2 */}
-        <div className="flex justify-center gap-8 mb-16">
-
-            {/* Box 4 */}
+            {/* Box 3 */}
             <div className="bg-[#233EA1] w-72 h-84 text-center tracking-wide">
                 <ol className="list-decimal list-inside text-3xl p-2">
                     <li value="4">take the impact concussion test</li>
@@ -77,6 +61,20 @@ const FirstTimeChecklist = () => {
                 </div>
             </div>
 
+        </div>
+
+        {/* Row 2 */}
+        <div className="flex justify-center gap-8 mb-16">
+            {/* Box 4 */}
+            <div className="bg-[#233EA1] w-72 h-84 text-center tracking-wide">
+                <ol className="list-decimal list-inside text-3xl p-2">
+                    <li value="1">Buy 1 Day Pass and Pay Club Dues</li>
+                </ol>
+                <div className="flex flex-col p-2 text-left ml-2 gap-2">
+                    <p className="text-lg">Both must be purchased before entering a meeting</p>
+                    <p className="text-md">If you have a Movement membership then you only need to pay dues each quarter</p>
+                </div>
+            </div>
             {/* Box 5 */}
             <div className="bg-[#233EA1] w-72 h-84 text-center tracking-wide">
                 <ol className="list-decimal list-inside text-3xl p-2">

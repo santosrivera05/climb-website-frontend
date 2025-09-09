@@ -16,6 +16,8 @@ const Register = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
 
+    const [membership, setMembership] = useState(null);
+
     const [email, setEmail] = useState('');
     const [validName, setValidName] = useState(false);
     const [emailFocus, setEmailFocus] = useState(false);
@@ -71,10 +73,7 @@ const Register = () => {
             const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/send-recovery-email`, // might cause a bug
                 JSON.stringify({
                     recipient_email: email,
-                    pwd,
-                    firstName: firstName.trim(), 
-                    lastName: lastName.trim(),
-                    OTP
+                    pwd
                 }),
                 {
                     headers: { 'Content-Type': 'application/json' },
@@ -84,9 +83,12 @@ const Register = () => {
 
             //clear state and controlled inputs
             setEmail('');
+            setFirstName('');
+            setLastName('');
+            setMembership(null);
             setPwd('');
             setMatchPwd('');
-            navigate('/otp', { state: {email, pwd, firstName, lastName, OTP}});
+            navigate('/otp', { state: {email, pwd, firstName, lastName, membership, OTP}});
         } catch (err) {
             if (!err?.response) {
                 setErrMsg('No Server Response');
@@ -258,6 +260,39 @@ const Register = () => {
                 <FontAwesomeIcon icon={faInfoCircle} className="mr-1 staatliches" />
                 Must match the first password input field.
               </p>
+            </div>
+
+            {/* Movement Member? */}
+            <div>
+              <label className="block staatliches text-2xl text-black mb-2">
+                Do You Have a Movement Gyms Membership (Not Required)?
+              </label>
+              <div className="flex gap-6 mt-2">
+                <label className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="membership"
+                    value="Yes"
+                    checked={membership === 1}
+                    onChange={() => setMembership(1)}
+                    required
+                    className="accent-blue-500"
+                  />
+                  Yes
+                </label>
+                <label className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="membership"
+                    value="No"
+                    checked={membership === 0}
+                    onChange={() => setMembership(0)}
+                    required
+                    className="accent-blue-500"
+                  />
+                  No
+                </label>
+              </div>
             </div>
 
             {/* Submit Button */}

@@ -28,14 +28,13 @@ function Exec() {
     );
 
     // Get row color based on pass count
-    const getRowStyle = (passes) => {
-        if (passes === 0) return { border: '2px solid red', background: '#ff7878' };
+    const getRowStyle = (passes, membership, dues) => {
+        if (membership === 1) return { border: '2px solid blue', background: '#49c6f0ff' };
+        if (passes === 0 || dues === 0) return { border: '2px solid red', background: '#ff7878' };
         if (passes === 1) return { border: '2px solid orange', background: '#f2fa7f'};
         if (passes >= 2) return { border: '2px solid green', background: '#6ef07b'};
         return {};
     };
-
-    const checkInRowStyle = { border: '1px solid black', background: 'silver' };
 
     const formatDateTime = (dateTimeString) => {
         const date = new Date(dateTimeString);
@@ -51,24 +50,26 @@ function Exec() {
         });
     };
 
-    const handlePassUse = async (firstName, lastName, email) => {
+    const handlePassUse = async (firstName, lastName, email, membership) => {
 
         try {
-            const response = await axiosPrivate.post('/use-pass', { firstName, lastName, email });
+            const response = await axiosPrivate.post('/use-pass', { firstName, lastName, email, membership });
             if (response.status === 200) {
+                if (membership === 0) {
                 setData(prevData =>
                     prevData.map(user =>
                         user.Email === email ?
                             { ...user, Passes: user.Passes - 1 }
                     : user
-                )
-            );
-                const newCheckIn = {
-                    First: firstName,
-                    Last: lastName,
-                    Email: email,
-                    DateTime: response.data.dateTime
-                };
+                        )
+                    );
+                }
+            const newCheckIn = {
+                First: firstName,
+                Last: lastName,
+                Email: email,
+                DateTime: response.data.dateTime
+            };
                 setCheckInData(prevData => [newCheckIn, ...prevData]);
             } else {
                 console.log('Error using pass:', response.data);
@@ -98,16 +99,18 @@ function Exec() {
                 <th className="p-2">Email</th>
                 <th className="p-2">Passes</th>
                 <th className="p-2">Dues</th>
+                <th className="p-2">Member</th>
                 <th className="p-2">Actions</th>
             </tr>
             </thead>
             <tbody>
             {filteredData.map((d, i) => (
-                <tr key={i} style={getRowStyle(d.Passes)}>
+                <tr key={i} style={getRowStyle(d.Passes, d.Membership, d.Dues)}>
                 <td className="p-2">{d.Last}, {d.First}</td>
                 <td className="p-2">{d.Email}</td>
                 <td className="p-2">{d.Passes}</td>
                 <td className="p-2">{d.Dues === 1 ? "Yes" : "No"}</td>
+                <td className="p-2">{d.Membership === 1 ? "Yes" : "No"}</td>
                 <td className="p-2">
                     <button
                     className={`px-3 py-1 rounded text-white 
@@ -115,7 +118,7 @@ function Exec() {
                         ? "bg-gray-400 cursor-not-allowed" 
                         : "bg-red-600 hover:bg-red-700"
                         }`}
-                    onClick={() => handlePassUse(d.First, d.Last, d.Email)}
+                    onClick={() => handlePassUse(d.First, d.Last, d.Email, d.Membership)}
                     disabled={d.Passes === 0}
                     >
                     Use Pass

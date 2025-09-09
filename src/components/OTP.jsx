@@ -8,7 +8,7 @@ const OTP = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const { email, pwd, firstName, lastName, OTP } = location.state || {};
+    const { email, pwd, firstName, lastName, membership, OTP } = location.state || {};
     const [timerCount, setTimer] = useState(60); // Timer for OTP validity
     const [otpExpiry, setOtpExpiry] = useState(300); // 5 minutes (300 seconds) for OTP expiry
     const [otpExpired, setOtpExpired] = useState(false);
@@ -52,7 +52,8 @@ async function verifyOTP() {
                         email,
                         pwd,
                         firstName,
-                        lastName
+                        lastName,
+                        membership
                     }),
                     {
                         headers: { 'Content-Type': 'application/json' },
