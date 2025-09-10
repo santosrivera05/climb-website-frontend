@@ -83,11 +83,12 @@ function Exec() {
     };
 
     const handleUndo = async (email, membership, dateTime) => {
-
+        console.log(email, membership, dateTime);
         try {
             const response = await axiosPrivate.post(`${import.meta.env.VITE_BACKEND_URL}/undo-check-in`, 
                 { email, membership, dateTime });
             if (response.status === 200) {
+                console.log(email, membership, dateTime);
                 if (membership === 0) {
                 setData(prevData =>
                     prevData.map(user =>
@@ -155,7 +156,7 @@ function Exec() {
                         : "bg-red-600 hover:bg-red-700"
                         }`}
                     onClick={() => handlePassUse(d.First, d.Last, d.Email, d.Membership)}
-                    disabled={d.Passes === 0}
+                    disabled={d.Passes === 0 || d.Membership === 0}
                     >
                     { d.Membership === 1 ? "Check In" : "Use Pass" }
                     </button>
