@@ -156,7 +156,7 @@ function Exec() {
                         : "bg-red-600 hover:bg-red-700"
                         }`}
                     onClick={() => handlePassUse(d.First, d.Last, d.Email, d.Membership)}
-                    disabled={d.Passes === 0 || d.Membership === 0}
+                    disabled={d.Passes === 0 || d.Dues === 0}
                     >
                     { d.Membership === 1 ? "Check In" : "Use Pass" }
                     </button>
