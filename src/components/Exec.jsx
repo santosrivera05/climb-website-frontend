@@ -186,7 +186,7 @@ function Exec() {
                 <td className="p-2">
                     <button
                     className={'px-3 py-1 rounded text-white bg-red-600 hover:bg-red-700'}
-                    onClick={() => handleUndo(d.First, d.Last, d.Email, d.Membership, d.DateTime)}
+                    onClick={() => handleUndo(d.Email, d.Membership, d.DateTime)}
                     >
                     Undo
                     </button>
