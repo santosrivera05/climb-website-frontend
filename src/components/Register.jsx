@@ -73,7 +73,8 @@ const Register = () => {
             const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/send-recovery-email`, // might cause a bug
                 JSON.stringify({
                     recipient_email: email,
-                    pwd
+                    pwd,
+                    firstName
                 }),
                 {
                     headers: { 'Content-Type': 'application/json' },
@@ -299,7 +300,7 @@ const Register = () => {
             <div>
               <button
                 type="submit"
-                disabled={!validName || !validPwd || !validMatch}
+                disabled={!validName || !validPwd || !validMatch || firstName === '' || lastName === '' || membership === null}
                 className={`flex w-full justify-center rounded-md px-3 py-1.5 text-2xl staatliches ${
                   validName && validPwd && validMatch
                     ? "bg-blue-500 text-white hover:bg-blue-400"

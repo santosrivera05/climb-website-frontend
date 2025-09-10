@@ -29,8 +29,9 @@ function Exec() {
 
     // Get row color based on pass count
     const getRowStyle = (passes, membership, dues) => {
+        if (dues === 0) return { border: '2px solid red', background: '#ff7878' };
         if (membership === 1) return { border: '2px solid blue', background: '#49c6f0ff' };
-        if (passes === 0 || dues === 0) return { border: '2px solid red', background: '#ff7878' };
+        if (passes === 0) return { border: '2px solid red', background: '#ff7878' };
         if (passes === 1) return { border: '2px solid orange', background: '#f2fa7f'};
         if (passes >= 2) return { border: '2px solid green', background: '#6ef07b'};
         return {};
