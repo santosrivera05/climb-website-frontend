@@ -70,7 +70,8 @@ function Exec() {
                 First: firstName,
                 Last: lastName,
                 Email: email,
-                DateTime: response.data.dateTime
+                DateTime: response.data.dateTime,
+                Membership: membership
             };
             console.log(newCheckIn.DateTime);
                 setCheckInData(prevData => [newCheckIn, ...prevData]);
