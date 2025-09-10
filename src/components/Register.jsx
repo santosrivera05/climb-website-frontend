@@ -74,7 +74,8 @@ const Register = () => {
                 JSON.stringify({
                     recipient_email: email,
                     pwd,
-                    firstName
+                    firstName,
+                    OTP
                 }),
                 {
                     headers: { 'Content-Type': 'application/json' },
@@ -266,7 +267,7 @@ const Register = () => {
             {/* Movement Member? */}
             <div>
               <label className="block staatliches text-2xl text-black mb-2">
-                Do You Have a Movement Gyms Membership (Not Required)?
+                Do You Have a Movement Gyms Membership?
               </label>
               <div className="flex gap-6 mt-2">
                 <label className="flex items-center gap-2">
@@ -302,7 +303,7 @@ const Register = () => {
                 type="submit"
                 disabled={!validName || !validPwd || !validMatch || firstName === '' || lastName === '' || membership === null}
                 className={`flex w-full justify-center rounded-md px-3 py-1.5 text-2xl staatliches ${
-                  validName && validPwd && validMatch
+                  validName && validPwd && validMatch && firstName !== '' && lastName !== '' && membership !== null
                     ? "bg-blue-500 text-white hover:bg-blue-400"
                     : "bg-gray-300 text-gray-500 cursor-not-allowed"
                 }`}
