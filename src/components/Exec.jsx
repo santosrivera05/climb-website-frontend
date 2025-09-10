@@ -54,7 +54,8 @@ function Exec() {
     const handlePassUse = async (firstName, lastName, email, membership) => {
 
         try {
-            const response = await axiosPrivate.post('/use-pass', { firstName, lastName, email, membership });
+            const response = await axiosPrivate.post(`${import.meta.env.VITE_BACKEND_URL}/use-pass`, 
+                { firstName, lastName, email, membership });
             if (response.status === 200) {
                 if (membership === 0) {
                 setData(prevData =>
@@ -71,6 +72,7 @@ function Exec() {
                 Email: email,
                 DateTime: response.data.dateTime
             };
+            console.log(newCheckIn.DateTime);
                 setCheckInData(prevData => [newCheckIn, ...prevData]);
             } else {
                 console.log('Error using pass:', response.data);
@@ -79,6 +81,37 @@ function Exec() {
             console.error('Error:', err.response?.data || err.message);
         }
     };
+
+    const handleUndo = async (email, membership, dateTime) => {
+
+        try {
+            const response = await axiosPrivate.post(`${import.meta.env.VITE_BACKEND_URL}/undo-check-in`, 
+                { email, membership, dateTime });
+            if (response.status === 200) {
+                if (membership === 0) {
+                setData(prevData =>
+                    prevData.map(user =>
+                        user.Email === email ?
+                            { ...user, Passes: user.Passes + 1 }
+                    : user
+                        )
+                    );
+                }
+
+                // Remove check-in from the table
+                setCheckInData(prevData =>
+                    prevData.filter(
+                        checkIn => !(checkIn.Email === email && checkIn.DateTime === response.data.dateTime)
+                    )
+            );
+            } else {
+                console.log('Error undoing check-in:', response.data);
+            }
+        } catch (err) {
+            console.error('Error:', err.response?.data || err.message);
+        }
+    };
+
     return (
     <div className="flex px-8 py-4">
         {/* Users Table */}
@@ -141,6 +174,7 @@ function Exec() {
                 <th className="p-2">Date</th>
                 <th className="p-2">Name</th>
                 <th className="p-2">Email</th>
+                <th className="p-2">Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -149,6 +183,14 @@ function Exec() {
                 <td className="p-2">{formatDateTime(d.DateTime)}</td>
                 <td className="p-2">{d.Last}, {d.First}</td>
                 <td className="p-2">{d.Email}</td>
+                <td className="p-2">
+                    <button
+                    className={'px-3 py-1 rounded text-white bg-red-600 hover:bg-red-700'}
+                    onClick={() => handleUndo(d.First, d.Last, d.Email, d.Membership, formatDateTime(d.DateTime))}
+                    >
+                    Undo
+                    </button>
+                </td>
                 </tr>
             ))}
             </tbody>
