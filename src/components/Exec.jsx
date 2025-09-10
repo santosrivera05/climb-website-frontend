@@ -99,11 +99,11 @@ function Exec() {
                 }
 
                 // Remove check-in from the table
-                const deletedCheckIn = response.data.checkIn;
-                setCheckInData(prevData =>
-                    prevData.filter(checkIn => !(
-                        checkIn.Email === deletedCheckIn.Email &&
-                        checkIn.DateTime === deletedCheckIn.DateTime
+                const deletedEmail = response.data.email;
+                const deletedDateTime = response.data.dateTime;
+                setCheckInData(prevData => prevData.filter(checkIn => !(
+                        checkIn.Email === deletedEmail &&
+                        checkIn.DateTime === deletedDateTime
                     ))
                 )
             } else {
