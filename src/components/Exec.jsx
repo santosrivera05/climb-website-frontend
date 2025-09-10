@@ -99,11 +99,13 @@ function Exec() {
                 }
 
                 // Remove check-in from the table
+                const deletedCheckIn = response.data.checkIn;
                 setCheckInData(prevData =>
-                    prevData.filter(
-                        checkIn => !(checkIn.Email === email && checkIn.DateTime === response.data.dateTime)
-                    )
-            );
+                    prevData.filter(checkIn => !(
+                        checkIn.Email === deletedCheckIn.Email &&
+                        checkIn.DateTime === deletedCheckIn.DateTime
+                    ))
+                )
             } else {
                 console.log('Error undoing check-in:', response.data);
             }
@@ -155,7 +157,7 @@ function Exec() {
                     onClick={() => handlePassUse(d.First, d.Last, d.Email, d.Membership)}
                     disabled={d.Passes === 0}
                     >
-                    Use Pass
+                    { d.Membership === 1 ? "Check In" : "Use Pass" }
                     </button>
                 </td>
                 </tr>
