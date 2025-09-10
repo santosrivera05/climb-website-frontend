@@ -176,6 +176,7 @@ function Exec() {
                 <th className="p-2">Date</th>
                 <th className="p-2">Name</th>
                 <th className="p-2">Email</th>
+                <th className="p-2">Membership</th>
                 <th className="p-2">Actions</th>
             </tr>
             </thead>
@@ -185,6 +186,7 @@ function Exec() {
                 <td className="p-2">{formatDateTime(d.DateTime)}</td>
                 <td className="p-2">{d.Last}, {d.First}</td>
                 <td className="p-2">{d.Email}</td>
+                <td className="p-2">{d.Membership === 1 ? "Yes" : "No"}</td>
                 <td className="p-2">
                     <button
                     className={'px-3 py-1 rounded text-white bg-red-600 hover:bg-red-700'}
