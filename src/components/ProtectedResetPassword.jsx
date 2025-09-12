@@ -1,9 +1,10 @@
-import { useLocation, Navigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ResetPassword from './ResetPassword';
 
 const ProtectedResetPassword = () => {
     const location = useLocation();
+    const navigate = useNavigate();
     const [isAuthorized, setIsAuthorized] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     
@@ -26,10 +27,14 @@ const ProtectedResetPassword = () => {
     }
     
     if (!isAuthorized) {
-        return <Navigate to="/forgot-password" replace />;
+        // Use navigate to redirect imperatively
+        navigate('/forgot-password', { replace: true });
+        return null;
     }
-    
-    return <ResetPassword email={location.state.email} />;
+
+    // Use navigate to go to /reset-password with email in state
+    navigate('/reset-password', { state: { email: location.state.email } });
+    return null;
 };
 
 export default ProtectedResetPassword;
