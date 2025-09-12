@@ -191,7 +191,7 @@ const Calendar = () => {
           <img
             src="../../img/location-icon.png"
               alt="Location Icon"
-            className="w-48 h-48"
+            className="lg:w-48 lg:h-48 md:w-36 md:h-36 w-24 h-24"
              />
             <div className="flex flex-col items-center mr-14 mt-4 text-3xl">
               

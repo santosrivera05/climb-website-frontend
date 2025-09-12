@@ -9,11 +9,11 @@ const FirstTimeChecklist = () => {
 
         <div className="flex flex-col gap-8">
         {/* Row 1 */}
-        <div className="flex justify-between gap-8">
+        <div className="flex flex-col md:flex-row md:justify-between gap-8">
             {/* Box 1 */}
             <div className="bg-[#233EA1] w-72 h-84 text-center tracking-wide">
                 <ol className="list-decimal list-inside text-3xl p-2">
-                    <li value="2">Fill out movement's liability waiver</li>
+                    <li value="1">Fill out movement's liability waiver</li>
                 </ol>
                 <div className="flex flex-col p-2 text-left ml-2 gap-2">
                     <p className="text-lg">Go to&nbsp;
@@ -31,7 +31,7 @@ const FirstTimeChecklist = () => {
             {/* Box 2 */}
             <div className="bg-[#233EA1] w-72 h-84 text-center tracking-wide">
                 <ol className="list-decimal list-inside text-3xl p-2">
-                    <li value="3">Fill out depaul club sports waiver</li>
+                    <li value="2">Fill out depaul club sports waiver</li>
                 </ol>
                 <div className="flex flex-col p-2 text-left ml-2 gap-2">
                     <p className="text-lg">fill out&nbsp;
@@ -46,11 +46,11 @@ const FirstTimeChecklist = () => {
             {/* Box 3 */}
             <div className="bg-[#233EA1] w-72 h-84 text-center tracking-wide">
                 <ol className="list-decimal list-inside text-3xl p-2">
-                    <li value="4">take the impact concussion test</li>
+                    <li value="3">take the impact concussion test</li>
                 </ol>
                 <div className="flex flex-col p-2 text-left ml-2 gap-2">
                     <p className="text-lg">Fill out&nbsp;
-                      <a href="#"
+                      <a href="https://docs.google.com/forms/d/e/1FAIpQLScbATJqUDmoJpAQOzfO-b3IyQN6ALNl1wF4hDwNpSaDAb0mkw/viewform?usp=header"
                       className="hover:cursor-pointer underline"
                       target="_blank" rel="noopener noreferrer">
                       this form</a>
@@ -64,11 +64,11 @@ const FirstTimeChecklist = () => {
         </div>
 
         {/* Row 2 */}
-        <div className="flex justify-center gap-8 mb-16">
+        <div className="flex flex-col md:flex-row md:justify-center gap-8 mb-12 md:mb-16">
             {/* Box 4 */}
             <div className="bg-[#233EA1] w-72 h-84 text-center tracking-wide">
                 <ol className="list-decimal list-inside text-3xl p-2">
-                    <li value="1">Buy 1 Day Pass and Pay Club Dues</li>
+                    <li value="4">Buy 1 Day Pass and Pay Club Dues</li>
                 </ol>
                 <div className="flex flex-col p-2 text-left ml-2 gap-2">
                     <p className="text-lg">Both must be purchased before entering a meeting</p>

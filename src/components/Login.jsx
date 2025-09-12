@@ -105,9 +105,12 @@ const Login = () => {
               Password
             </label>
             <div className="text-sm">
-              <a href="/forgot-password" className="text-md staatliches text-blue-500 hover:text-blue-300">
+              <span
+                className="text-md staatliches text-blue-500 hover:text-blue-300 hover:cursor-pointer"
+                onClick={() => navigate('/forgot-password')}
+              >
                 Forgot password?
-              </a>
+            </span>
             </div>
           </div>
           <div className="mt-2 flex gap-2 items-center">

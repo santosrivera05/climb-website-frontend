@@ -207,6 +207,10 @@ async function verifyOTP() {
             />
           </div>
 
+          <p className="text-center text-gray-700 mb-2 staatliches tracking-wider">
+            Double check your spam/junk folder for the email!
+          </p>
+
           {/* Buttons */}
           <div className="space-y-4">
             <button

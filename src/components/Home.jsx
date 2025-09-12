@@ -76,7 +76,7 @@ function Home() {
               <img
                 src="../../img/location-icon.png"
                 alt="Location Icon"
-                className="w-48 h-48"
+                className="lg:w-48 lg:h-48 md:w-36 md:h-36 w-24 h-24"
               />
               <div className="flex flex-col items-center mr-14 mt-4 text-3xl">
               
@@ -89,7 +89,7 @@ function Home() {
               </div>
             </div>
 
-            <p className="text-[#D7263D] mt-4 text-3xl tracking-widest">
+            <p className="text-[#D7263D] mt-4 text-lg md:text-3xl tracking-widest">
               CHECK OUR CALENDAR TO SEE WHICH GYM WE ARE AT PER MEETING!
             </p>
           </div>
@@ -102,7 +102,7 @@ function Home() {
               <div className="h-px w-48 bg-[#011638]"></div>
             </div>
 
-            <div className="flex flex-col md:flex-row justify-center gap-8 mt-8">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-8">
               {/* Lucas */}
               <div className="bg-white shadow-lg w-60">
                 <div className="bg-gray-200 h-60 flex items-center justify-center">

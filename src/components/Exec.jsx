@@ -73,7 +73,6 @@ function Exec() {
                 DateTime: response.data.dateTime,
                 Membership: membership
             };
-            console.log(newCheckIn.DateTime);
                 setCheckInData(prevData => [newCheckIn, ...prevData]);
             } else {
                 console.log('Error using pass:', response.data);
@@ -152,7 +151,7 @@ function Exec() {
                 <td className="p-2">
                     <button
                     className={`px-3 py-1 rounded text-white 
-                        ${d.Passes === 0 
+                        ${d.Passes === 0 || d.Dues === 0
                         ? "bg-gray-400 cursor-not-allowed" 
                         : "bg-red-600 hover:bg-red-700"
                         }`}

@@ -5,12 +5,12 @@ const Footer = () => {
       
         <footer className="bg-[#233EA1] flex items-center justify-between px-8 py-4 staatliches text-white">
 
-        <div className="flex-1 text-center">
+        <div className="hidden md:block flex-1 text-center">
           <p className="text-5xl">Questions? Inquiries?</p>
           <p className="text-3xl">Contact Info</p>
         </div>
 
-        <div className="">
+        <div className="hidden md:block">
           <img
             src="../../img/dyno-logo.png"
             alt="Dyno Logo"
@@ -27,14 +27,14 @@ const Footer = () => {
                 <img
                 src="../../img/insta-logo.png"
                 alt="Instagram"
-                className="w-24 h-24 inline-block"
+                className="w-16 h-16 md:w-24 md:h-24 inline-block"
                 />
               </a>
               <a href="https://linktr.ee/depaulclimbing" target="_blank" rel="noopener noreferrer">
                 <img 
                 src="../../img/linktree-icon.png"
                 alt="Linktree"
-                className="w-24 h-24 inline-block"
+                className="w-16 h-16 md:w-24 md:h-24 inline-block"
                 />
               </a>
 
@@ -42,7 +42,7 @@ const Footer = () => {
                 <img 
                 src="../../img/dehub-icon.png"
                 alt="DeHub"
-                className="w-24 h-24 inline-block"
+                className="w-16 h-16 md:w-24 md:h-24 inline-block"
                 />
               </a>
               
