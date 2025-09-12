@@ -27,14 +27,10 @@ const ProtectedResetPassword = () => {
     }
     
     if (!isAuthorized) {
-        // Use navigate to redirect imperatively
-        navigate('/forgot-password', { replace: true });
-        return null;
+        return <Navigate to="/forgot-password" replace />;
     }
-
-    // Use navigate to go to /reset-password with email in state
-    navigate('/reset-password', { state: { email: location.state.email } });
-    return null;
+    
+    return <ResetPassword email={location.state.email} />;
 };
 
 export default ProtectedResetPassword;
