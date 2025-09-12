@@ -63,10 +63,19 @@ const ResetPassword = ({ email }) => {
     return (
         <>
             {success ? (
-                <div>
-                    <h1>Success!</h1>
-                    <p>Your password has been reset successfully!</p>
-                </div>
+                <section className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 text-center bg-[#EEFCFF]">
+              <h1 className="text-3xl staatliches text-black">Success!</h1>
+              <p className="mt-4 text-2xl staatliches text-gray-500">Your password has been reset successfully!</p>
+              <p className="mt-4 text-blue-500 text-2xl staatliches underline mb-8 hover:text-blue-300">
+                <Link to='/login'>Sign In</Link>
+              </p>
+
+              <img
+              src="../../img/dog-smile.gif"
+              alt="Happy Dog"
+              className="mx-auto object-cover mb-24"
+            />
+            </section>
             ) : (
                 <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 bg-[#EEFCFF] tracking-widest">
 

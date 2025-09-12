@@ -23,7 +23,7 @@ const OTP = () => {
 
         const newOTP = Math.floor(Math.random() * 9000 + 1000); // Generate a random 4-digit OTP
             setCurrentOTP(newOTP);
-            console.log(`OTP for ${email} is: ${currentOTP}`);
+            // console.log(`OTP for ${email} is: ${currentOTP}`);
 
 
         axios.post(`${import.meta.env.VITE_BACKEND_URL}/send-recovery-email`, {OTP: currentOTP, recipient_email: email})

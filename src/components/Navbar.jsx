@@ -16,7 +16,7 @@ function Navbar() {
       const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/logout`, {}, {
         withCredentials: true
       });
-      console.log(auth);
+      // console.log(auth);
       
       if (response.status === 200) {
         console.log('Logout successful');

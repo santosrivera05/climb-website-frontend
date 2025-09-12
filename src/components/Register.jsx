@@ -69,7 +69,7 @@ const Register = () => {
 
         if (email) {
             const OTP = Math.floor(Math.random() * 9000 + 1000); // Generate a random 4-digit OTP
-            console.log(`OTP for ${email} is: ${OTP}`);
+            // console.log(`OTP for ${email} is: ${OTP}`);
             setOTP(OTP);
         
         try {
