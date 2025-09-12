@@ -43,7 +43,7 @@ async function verifyOTP() {
     }
     if (parseInt(OTPinput.join("")) === currentOTP) {
         if(!firstName) {
-            navigate(`${import.meta.env.VITE_BACKEND_URL}/reset-password`, { state: { email, verified: true } });
+            navigate('/reset-password', { state: { email, verified: true } });
             return;
         } else {
             try {
