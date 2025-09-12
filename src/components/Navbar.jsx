@@ -62,7 +62,7 @@ function Navbar() {
 
            {/* Mobile Hamburger */}
       <button
-        className="md:hidden flex flex-col gap-1"
+        className="md:hidden flex flex-col gap-1 p-3"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         <span className="w-6 h-0.5 bg-white"></span>

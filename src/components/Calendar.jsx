@@ -153,37 +153,36 @@ const Calendar = () => {
       </div>
 
       {/* Calendar grid */}
-      <div className="grid grid-cols-7 border-4 border-[#011638] min-h-96">
-        {days.map((day) => (
-          <div
-            key={day}
-            className="border-r border-[#011638] last:border-r-0 flex flex-col p-2"
-          >
-            {/* Day Header */}
-            <div className="text-center text-4xl">
-              {format(day, 'EEE').toUpperCase()}
-            </div>
-            <div className="text-center text-2xl mb-2 border-b border-[#011638]">
-              {format(day, 'MMM. do').toUpperCase()}
-            </div>
+      <div className="overflow-x-auto">
+        <div className="grid grid-cols-7 min-w-[950px] border-4 border-[#011638] min-h-96">
+          {days.map((day) => (
+            <div
+              key={day}
+              className="border-r border-[#011638] last:border-r-0 flex flex-col p-4"
+            >
+              {/* Day Header */}
+              <div className="text-center text-2xl lg:text-4xl">
+                {format(day, 'EEE').toUpperCase()}
+              </div>
+              <div className="text-center text-lg lg:text-2xl mb-2 border-b border-[#011638]">
+                {format(day, 'MMM. do').toUpperCase()}
+              </div>
 
-            {/* Events */}
-            <div className="flex flex-col gap-8 text-2xl">
-              {events
-                .filter((event) => isSameDay(event.date, day))
-                .map((event, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-[#011638] text-white p-2"
-                  >
-                    <p className="">{event.title}</p>
-                    <p className="text-[#D7263D]">{event.location}</p>
-                    <p>{event.time}</p>
-                  </div>
-                ))}
+              {/* Events */}
+              <div className="flex flex-col gap-4 text-lg lg:text-2xl">
+                {events
+                  .filter((event) => isSameDay(event.date, day))
+                  .map((event, idx) => (
+                    <div key={idx} className="bg-[#011638] text-white p-2 rounded">
+                      <p>{event.title}</p>
+                      <p className="text-[#D7263D]">{event.location}</p>
+                      <p>{event.time}</p>
+                    </div>
+                  ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
         {/* Location Section */}
@@ -218,7 +217,7 @@ const Calendar = () => {
                 </div>
             </div>
 
-                <div className="flex flex-col mr-72 ml-72">
+                <div className="flex flex-col lg:mr-72 lg:ml-72">
                     <p className="text-4xl mt-4 text-[#D7263D]">
                         To LP
                     </p>
@@ -228,7 +227,7 @@ const Calendar = () => {
                     </ul>
                 </div>
 
-                <div className="flex flex-col mr-72 ml-72">
+                <div className="flex flex-col lg:mr-72 lg:ml-72">
                     <p className="text-4xl mt-4 text-[#D7263D]">
                         To WRIG
                     </p>

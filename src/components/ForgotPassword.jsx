@@ -65,10 +65,14 @@ const ForgotPassword = () => {
 
             <p className="mt-10 text-center staatliches text-lg text-gray-500 mb-32">
               Remember your password?{" "}
-              <a href="/login" className="text-blue-500 hover:text-blue-300">
+              <span
+                className="text-blue-500 hover:text-blue-300 hover:cursor-pointer"
+                onClick={() => navigate('/login')}
+              > 
                 Sign In
-              </a>
+            </span>
             </p>
+
         </div>
       </div>
   );
