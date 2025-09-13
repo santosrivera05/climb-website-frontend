@@ -14,7 +14,7 @@ import Calendar from './components/Calendar';
 import FirstTimeChecklist from './components/FirstTimeChecklist';
 import ForgotPassword from './components/ForgotPassword';
 import OTP from './components/OTP';
-import ProtectedResetPassword from './components/ProtectedResetPassword';
+import ResetPassword from './components/ResetPassword';
 
 import useRefreshToken from './hooks/useRefreshToken';
 import useAuth from './hooks/useAuth';
@@ -89,7 +89,7 @@ function App() {
         <Route path='/first-time-checklist' element={<FirstTimeChecklist/>}/>
         <Route path='/forgot-password' element={<ForgotPassword/>}/>
         <Route path='/otp' element={<OTP/>}/>
-        <Route path='/reset-password' element={<ProtectedResetPassword/>}/>
+        <Route path='/reset-password' element={<ResetPassword/>}/>
         <Route path='*' element={<h1>404 Not Found</h1>}/>
      </Routes>
     <Footer />
