@@ -34,6 +34,7 @@ const ResetPassword = ({ email }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const v2 = PWD_REGEX.test(pwd);
+        console.log(email);
         if (!v2) {
             setErrMsg("Invalid Entry");
             return;
