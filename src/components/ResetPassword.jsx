@@ -6,7 +6,7 @@ import axios from '../api/axios';
 
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
-const ResetPassword = ({ email }) => {
+const ResetPassword = () => {
     const errRef = useRef();
 
     const { email } = location.state || {};
