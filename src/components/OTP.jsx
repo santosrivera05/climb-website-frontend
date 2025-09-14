@@ -193,6 +193,8 @@ async function verifyOTP() {
                 ref={(el) => (otpRefs.current[index] = el)}
                 maxLength="1"
                 type="text"
+                inputMode="numeric"
+                pattern="[0-9]*"
                 value={OTPinput[index] || ''}
                 className="w-12 h-12 text-center text-xl border border-gray-300 rounded-md bg-black/5 text-black focus:outline-indigo-500"
                 onChange={(e) => handleOTPChange(e.target.value, index)}

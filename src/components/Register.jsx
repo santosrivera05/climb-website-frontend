@@ -6,7 +6,7 @@ import axios from '../api/axios';
 import '../App.css';
 
 const USER_REGEX = /^[a-zA-Z0-9._%+-]+@depaul+\.edu$/;
-const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
+const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^\w\s]).{8,24}$/;
 
 const Register = () => {
     const emailRef = useRef();
