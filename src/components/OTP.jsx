@@ -14,7 +14,9 @@ const OTP = () => {
     const [OTPinput, setOTPinput] = useState([0,0,0,0]);
     const [disabled, setDisable] = useState(true);
     const [success, setSuccess] = useState(false);
-    
+
+       // Create refs for each OTP input
+    const otpRefs = useRef([]);
 
     function handleOTP() {
         if (disabled) return;
