@@ -1,8 +1,6 @@
-import { useLocation, useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
+import React, { useState, useRef } from 'react';
 import axios from '../api/axios';
-import { Link } from "react-router-dom";
-
 
 const OTP = () => {
 
@@ -75,6 +73,36 @@ async function verifyOTP() {
     
     alert("The code you have entered is not correct, try again or re-send the link");
 }
+
+    // Handle OTP input change with auto-navigation
+    const handleOTPChange = (value, index) => {
+        // Only allow digits
+        if (!/^\d*$/.test(value)) return;
+        
+        const newOTP = [...OTPinput];
+        newOTP[index] = value;
+        setOTPinput(newOTP);
+        
+        // Move to next input if value is entered and not the last input
+        if (value && index < 3) {
+            otpRefs.current[index + 1]?.focus();
+        }
+    };
+
+    // Handle backspace/delete key
+    const handleOTPKeyDown = (e, index) => {
+        if (e.key === 'Backspace') {
+            // If current input is empty, move to previous input
+            if (!OTPinput[index] && index > 0) {
+                otpRefs.current[index - 1]?.focus();
+            }
+            // Clear current input
+            const newOTP = [...OTPinput];
+            newOTP[index] = '';
+            setOTPinput(newOTP);
+        }
+    };
+
     React.useEffect(() => {
         let interval = setInterval(() => {
             setTimer((lastTimerCount) => {
@@ -137,6 +165,10 @@ async function verifyOTP() {
             We have sent a 4-digit code to <span className="semibold">{email}</span>.
           </p>
 
+          <p className="text-center text-2xl text-red-500 mb-2 staatliches tracking-wider">
+            Double check your spam/junk folder for the email!
+          </p>
+
           {otpExpired ? (
             <p className="text-center text-red-500 staatliches tracking-wide mb-4">
               Your OTP has expired. Please request a new one.
@@ -151,65 +183,21 @@ async function verifyOTP() {
             </p>
           )}
 
-          {/* OTP Inputs */}
+          {/* Enhanced OTP Inputs with Auto-Navigation */}
           <div className="flex justify-center gap-4 mb-6">
-            <input
-              maxLength="1"
-              type="text"
-              className="w-12 h-12 text-center text-xl border border-gray-300 rounded-md bg-black/5 text-black focus:outline-indigo-500"
-              onChange={(e) =>
-                setOTPinput([
-                  e.target.value,
-                  OTPinput[1],
-                  OTPinput[2],
-                  OTPinput[3],
-                ])
-              }
-            />
-            <input
-              maxLength="1"
-              type="text"
-              className="w-12 h-12 text-center text-xl border border-gray-300 rounded-md bg-black/5 text-black focus:outline-indigo-500"
-              onChange={(e) =>
-                setOTPinput([
-                  OTPinput[0],
-                  e.target.value,
-                  OTPinput[2],
-                  OTPinput[3],
-                ])
-              }
-            />
-            <input
-              maxLength="1"
-              type="text"
-              className="w-12 h-12 text-center text-xl border border-gray-300 rounded-md bg-black/5 text-black focus:outline-indigo-500"
-              onChange={(e) =>
-                setOTPinput([
-                  OTPinput[0],
-                  OTPinput[1],
-                  e.target.value,
-                  OTPinput[3],
-                ])
-              }
-            />
-            <input
-              maxLength="1"
-              type="text"
-              className="w-12 h-12 text-center text-xl border border-gray-300 rounded-md bg-black/5 text-black focus:outline-indigo-500"
-              onChange={(e) =>
-                setOTPinput([
-                  OTPinput[0],
-                  OTPinput[1],
-                  OTPinput[2],
-                  e.target.value,
-                ])
-              }
-            />
+            {[0, 1, 2, 3].map((index) => (
+              <input
+                key={index}
+                ref={(el) => (otpRefs.current[index] = el)}
+                maxLength="1"
+                type="text"
+                value={OTPinput[index] || ''}
+                className="w-12 h-12 text-center text-xl border border-gray-300 rounded-md bg-black/5 text-black focus:outline-indigo-500"
+                onChange={(e) => handleOTPChange(e.target.value, index)}
+                onKeyDown={(e) => handleOTPKeyDown(e, index)}
+              />
+            ))}
           </div>
-
-          <p className="text-center text-gray-700 mb-2 staatliches tracking-wider">
-            Double check your spam/junk folder for the email!
-          </p>
 
           {/* Buttons */}
           <div className="space-y-4">
