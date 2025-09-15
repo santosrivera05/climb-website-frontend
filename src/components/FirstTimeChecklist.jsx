@@ -58,6 +58,8 @@ const FirstTimeChecklist = () => {
                     </p>
                     <p className="text-md">*You will get a seperate email with a link to take the test
                     </p>
+                    <p className="text-md">*If you have signed up for the test and have not recieved the email to take the test, you can still show up to club
+                    </p>
                 </div>
             </div>
 
@@ -68,7 +70,7 @@ const FirstTimeChecklist = () => {
             {/* Box 4 */}
             <div className="bg-[#233EA1] w-72 h-84 text-center tracking-wide">
                 <ol className="list-decimal list-inside text-3xl p-2">
-                    <li value="4">Buy 1 Day Pass and Pay Club Dues</li>
+                    <li value="4">Buy at least 1 Day Pass and Pay Club Dues</li>
                 </ol>
                 <div className="flex flex-col p-2 text-left ml-2 gap-2">
                     <p className="text-lg">Both must be purchased before entering a meeting</p>
