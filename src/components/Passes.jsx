@@ -79,7 +79,7 @@ function Passes() {
                             <p>{auth.user.Passes} Passes</p>
                         </div>
 
-                        { auth?.user.Dues ?
+                        { auth?.user.Dues === 1 ?
                         <div>
                             <p>All Dues Are</p>
                             <p>Currently Paid!</p>

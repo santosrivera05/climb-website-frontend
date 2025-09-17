@@ -6,7 +6,7 @@ const Cancel = () => {
             <h1 className="mb-4 py-4 text-4xl staatliches">Purchase Cancelled</h1>
 
             <div className="block mx-auto w-75">
-                <img src='../../public/img/sad ronaldo.webp' alt='Sad Ronaldo'/>
+                <img src='../../img/sad ronaldo.webp' alt='Sad Ronaldo'/>
 
             </div>
         </div>
