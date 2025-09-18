@@ -31,30 +31,31 @@ function App() {
   const { setAuth } = useAuth();
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const initializeAuth = async () => {
-      try {
-      const stored = localStorage.getItem("user");
-      const storedUser = stored ? JSON.parse(stored) : null;
-      if (storedUser) {
-        setAuth(prev => ({ ...prev, user: storedUser }));
-      }
+ useEffect(() => {
+  const initializeAuth = async () => {
+    try {
+      await refresh(); // ✅ always try to refresh first
     } catch (error) {
-      console.log('Error parsing user from localStorage:', error);
-      localStorage.removeItem("user");
-    }
+      console.log('No valid refresh token, falling back to localStorage');
 
+      // fallback to localStorage
       try {
-        await refresh(); // Wait for refresh to complete
-      } catch (error) {
-        console.log('No valid refresh token');
-      } finally {
-        setIsLoading(false); // Always set loading to false
+        const stored = localStorage.getItem("user");
+        const storedUser = stored ? JSON.parse(stored) : null;
+        if (storedUser) {
+          setAuth(prev => ({ ...prev, user: storedUser }));
+        }
+      } catch (err) {
+        console.log('Error parsing user from localStorage:', err);
+        localStorage.removeItem("user");
       }
-    };
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
-    initializeAuth();
-  }, []);
+  initializeAuth();
+}, []);
 
   // Show loading spinner while checking authentication
   if (isLoading) {
