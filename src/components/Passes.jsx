@@ -17,6 +17,7 @@ function Passes() {
 
     useEffect(() => {
         const refreshUser = async () => {
+        if (!auth) return;
           try {
             // axiosPrivate should send credentials (cookies) and baseURL '/api' or full URL.
             // If axiosPrivate already prefixes '/api', call '/refresh'.
@@ -41,7 +42,8 @@ function Passes() {
     
         // run it once on mount
         refreshUser();
-    }, []);
+        
+    }, [auth]);
 
     const handlePurchase = async (passQuantity) => {
 
