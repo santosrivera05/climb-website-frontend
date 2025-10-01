@@ -40,6 +40,7 @@ function App() {
 
       // clear local storage
       localStorage.removeItem('user');
+      localStorage.removeItem('refreshToken');
 
       // reset auth state
       setAuth({});
