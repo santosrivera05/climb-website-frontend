@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import useAuth from '../hooks/useAuth';
-import useAxiosPrivate from '../hooks/useAxiosPrivate';
+import useRefreshToken from '../hooks/useRefreshToken';
 import { loadStripe } from '@stripe/stripe-js';
 
 
 function Passes() {
 
     const { auth, setAuth } = useAuth(); // Use the useAuth hook to get auth state
-    const axiosPrivate = useAxiosPrivate();
+    const refresh = useRefreshToken();
 
     const [passQuantity, setPassQuantity] = useState(1);
 
@@ -15,35 +15,20 @@ function Passes() {
         setPassQuantity(e.target.value);
     };
 
+    // Refresh user info from backend on mount to ensure most recent data
     useEffect(() => {
-        const refreshUser = async () => {
-        if (!auth) return;
-          try {
-            // axiosPrivate should send credentials (cookies) and baseURL '/api' or full URL.
-            // If axiosPrivate already prefixes '/api', call '/refresh'.
-            // Otherwise call `${import.meta.env.VITE_BACKEND_URL}/api/refresh`.
-            const res = await axiosPrivate.get(`${import.meta.env.VITE_BACKEND_URL}/refresh`); // or get('/api/refresh') depending on your axios config
-    
-            // backend returns { user, accessToken, roles } per your /refresh implementation
-            const user = res.data.user;
-            const accessToken = res.data.accessToken;
-    
-            // update context
-            setAuth(prev => ({ ...(prev || {}), user, accessToken }));
-    
-            // update localStorage so other tabs and future reloads use fresh user data
-            localStorage.setItem('user', JSON.stringify(user));
-    
-          } catch (err) {
-            console.error('Could not refresh user after checkout:', err?.response?.data || err.message);
-            // You may want to show an error or still allow the user to continue
-          }
+        const updateUser = async () => {
+            try {
+                const user = await refresh(); // refresh hook returns updated user info
+                setAuth(prev => ({ ...(prev || {}), user }));
+                localStorage.setItem('user', JSON.stringify(user));
+            } catch (err) {
+                console.error('Could not refresh user data on Passes page:', err?.response?.data || err.message);
+            }
         };
-    
-        // run it once on mount
-        refreshUser();
-        
-    }, [auth]);
+
+        updateUser();
+    }, []);
 
     const handlePurchase = async (passQuantity) => {
 

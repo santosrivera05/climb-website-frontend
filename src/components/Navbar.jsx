@@ -12,18 +12,18 @@ function Navbar() {
   const handleLogout = async () => {
     setAuth(null);
     localStorage.clear();
-    try {
-      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/logout`, {}, {
-        withCredentials: true
-      });
-      // console.log(auth);
+    // try {
+    //   const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/logout`, {}, {
+    //     withCredentials: true
+    //   });
+    //   // console.log(auth);
       
-      if (response.status === 200) {
-        console.log('Logout successful');
-      }
-      } catch (err) {
-        console.error(err);
-      }
+    //   if (response.status === 200) {
+    //     console.log('Logout successful');
+    //   }
+    //   } catch (err) {
+    //     console.error(err);
+    //   }
 
     }
 

@@ -34,21 +34,15 @@ function App() {
  useEffect(() => {
   const initializeAuth = async () => {
     try {
-      await refresh(); // ✅ always try to refresh first
+      await refresh(); // try to refresh access token
     } catch (error) {
-      console.log('No valid refresh token, falling back to localStorage');
+      console.log('Refresh token invalid or expired, logging out');
 
-      // fallback to localStorage
-      try {
-        const stored = localStorage.getItem("user");
-        const storedUser = stored ? JSON.parse(stored) : null;
-        if (storedUser) {
-          setAuth(prev => ({ ...prev, user: storedUser }));
-        }
-      } catch (err) {
-        console.log('Error parsing user from localStorage:', err);
-        localStorage.removeItem("user");
-      }
+      // clear local storage
+      localStorage.removeItem('user');
+
+      // reset auth state
+      setAuth({});
     } finally {
       setIsLoading(false);
     }

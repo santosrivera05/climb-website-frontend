@@ -41,15 +41,14 @@ const Login = () => {
             );
             console.log(JSON.stringify(response?.data));
             
-            const accessToken = response?.data?.accessToken;
-            const roles = response?.data?.roles;
-
             console.log(response.data.user, response.data.accessToken);
+
+            localStorage.setItem('user', JSON.stringify(response.data.user));
+            localStorage.setItem('refreshToken', response?.data?.refreshToken);
             
             setAuth({ user: response.data.user, accessToken: response?.data?.accessToken }); // changed from setAuth({ user, pwd, roles, accessToken });
             setUser('');
             setPwd('');
-            localStorage.setItem('user', JSON.stringify(response.data.user));
             navigate(from, { replace: true });
         } catch (err) {
             if (!err?.response) {
