@@ -39,10 +39,12 @@ const Login = () => {
                     withCredentials: true
                 }
             );
-            // console.log(JSON.stringify(response?.data));
+            console.log(JSON.stringify(response?.data));
             
             const accessToken = response?.data?.accessToken;
             const roles = response?.data?.roles;
+
+            console.log(response.data.user, response.data.accessToken);
             
             setAuth({ user: response.data.user, accessToken: response?.data?.accessToken }); // changed from setAuth({ user, pwd, roles, accessToken });
             setUser('');
