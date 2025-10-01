@@ -8,9 +8,7 @@ const Success = () => {
     useEffect(() => {
         const updateUserAfterPurchase = async () => {
             try {
-                const user = await refresh(); // This should refresh tokens and return updated user info
-                setAuth(prev => ({ ...(prev || {}), user }));
-                localStorage.setItem('user', JSON.stringify(user));
+                const response = await refresh(); // This should refresh tokens and return updated user info
             } catch (err) {
                 console.error('Could not refresh user after purchase:', err?.response?.data || err.message);
             }

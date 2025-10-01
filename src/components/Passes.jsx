@@ -19,14 +19,11 @@ function Passes() {
     useEffect(() => {
         const updateUser = async () => {
             try {
-                const user = await refresh(); // refresh hook returns updated user info
-                setAuth(prev => ({ ...(prev || {}), user }));
-                localStorage.setItem('user', JSON.stringify(user));
+                const response = await refresh(); // refresh hook returns updated user info
             } catch (err) {
                 console.error('Could not refresh user data on Passes page:', err?.response?.data || err.message);
             }
         };
-
         updateUser();
     }, []);
 

@@ -13,9 +13,13 @@ const useRefreshToken = () => {
                 token: refreshToken
             });
 
-            const { accessToken } = response.data;
+            console.log(response.data);
+            const { accessToken } = response.data.accessToken;
+            const { user } = response.data.user;
 
-            setAuth(prev => ({...prev, accessToken}));
+            setAuth(prev => ({ ...(prev || {}), user, accessToken }));
+            localStorage.setItem('user', JSON.stringify(user));
+            
             return accessToken;
         } catch (err) {
             console.error('Refresh token error:', err);
