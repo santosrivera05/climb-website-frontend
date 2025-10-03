@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react';
 import useAuth from '../hooks/useAuth';
 import useRefreshToken from '../hooks/useRefreshToken';
 import { loadStripe } from '@stripe/stripe-js';
-
+import { useAxiosPrivate } from '../hooks/useAxiosPrivate';
 
 function Passes() {
 
     const { auth, setAuth } = useAuth(); // Use the useAuth hook to get auth state
     const refresh = useRefreshToken();
+    const axiosPrivate = useAxiosPrivate();
 
     const [passQuantity, setPassQuantity] = useState(1);
 
