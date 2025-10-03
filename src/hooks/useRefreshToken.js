@@ -14,8 +14,7 @@ const useRefreshToken = () => {
             });
 
             console.log(response.data);
-            const { accessToken } = response.data.accessToken;
-            const { user } = response.data.user;
+            const { accessToken, user } = response.data;
 
             setAuth(prev => ({ ...(prev || {}), user, accessToken }));
             localStorage.setItem('user', JSON.stringify(user));

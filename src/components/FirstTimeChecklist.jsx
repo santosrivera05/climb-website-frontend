@@ -43,44 +43,25 @@ const FirstTimeChecklist = () => {
                     </p>
                 </div>
             </div>
-            {/* Box 3 */}
-            <div className="bg-[#233EA1] w-72 h-84 text-center tracking-wide">
-                <ol className="list-decimal list-inside text-3xl p-2">
-                    <li value="3">take the impact concussion test</li>
-                </ol>
-                <div className="flex flex-col p-2 text-left ml-2 gap-2">
-                    <p className="text-lg">Fill out&nbsp;
-                      <a href="https://docs.google.com/forms/d/e/1FAIpQLScbATJqUDmoJpAQOzfO-b3IyQN6ALNl1wF4hDwNpSaDAb0mkw/viewform?usp=header"
-                      className="hover:cursor-pointer underline"
-                      target="_blank" rel="noopener noreferrer">
-                      this form</a>
-                      &nbsp;to sign up to take the test
-                    </p>
-                    <p className="text-md">*You will get a seperate email with a link to take the test
-                    </p>
-                    <p className="text-md">*If you have signed up for the test and have not recieved the email to take the test, you can still show up to club
-                    </p>
-                </div>
-            </div>
 
         </div>
 
         {/* Row 2 */}
         <div className="flex flex-col md:flex-row md:justify-center gap-8 mb-12 md:mb-16">
-            {/* Box 4 */}
+            {/* Box 3 */}
             <div className="bg-[#233EA1] w-72 h-84 text-center tracking-wide">
                 <ol className="list-decimal list-inside text-3xl p-2">
-                    <li value="4">Buy at least 1 Day Pass and Pay Club Dues</li>
+                    <li value="3">Buy at least 1 Day Pass and Pay Club Dues</li>
                 </ol>
                 <div className="flex flex-col p-2 text-left ml-2 gap-2">
                     <p className="text-lg">Both must be purchased before entering a meeting</p>
                     <p className="text-md">If you have a Movement membership then you only need to pay dues each quarter</p>
                 </div>
             </div>
-            {/* Box 5 */}
+            {/* Box 4 */}
             <div className="bg-[#233EA1] w-72 h-84 text-center tracking-wide">
                 <ol className="list-decimal list-inside text-3xl p-2">
-                    <li value="5">Double Check which gym we are meeting at</li>
+                    <li value="4">Double Check which gym we are meeting at</li>
                 </ol>
                 <div className="flex flex-col p-2 text-left ml-2 gap-2">
                     <p className="text-lg">
