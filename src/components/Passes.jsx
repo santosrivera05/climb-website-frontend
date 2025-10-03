@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import useAuth from '../hooks/useAuth';
 import useRefreshToken from '../hooks/useRefreshToken';
 import { loadStripe } from '@stripe/stripe-js';
-import { useAxiosPrivate } from '../hooks/useAxiosPrivate';
+import useAxiosPrivate from '../hooks/useAxiosPrivate';
 
 function Passes() {
 
