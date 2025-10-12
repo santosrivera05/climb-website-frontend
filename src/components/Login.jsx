@@ -39,9 +39,9 @@ const Login = () => {
                     withCredentials: true
                 }
             );
-            console.log(JSON.stringify(response?.data));
+            // console.log(JSON.stringify(response?.data));
             
-            console.log(response.data.user, response.data.accessToken);
+            // console.log(response.data.user, response.data.accessToken);
 
             localStorage.setItem('user', JSON.stringify(response.data.user));
             localStorage.setItem('refreshToken', response?.data?.refreshToken);

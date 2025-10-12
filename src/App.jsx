@@ -36,7 +36,7 @@ function App() {
     try {
       await refresh(); // try to refresh access token
     } catch (error) {
-      console.log('Refresh token invalid or expired, logging out');
+      // console.log('Refresh token invalid or expired, logging out');
 
       // clear local storage
       localStorage.removeItem('user');
