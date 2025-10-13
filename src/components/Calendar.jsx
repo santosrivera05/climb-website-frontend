@@ -75,25 +75,25 @@ const Calendar = () => {
     {
       date: new Date(2025, 9, 22), // Oct 22 2025
       title: 'CLUB MEETING',
-      location: '@WRIG',
+      location: '@LP',
       time: '6:00PM-9:00PM',
     },
     {
       date: new Date(2025, 9, 24), // Oct 24 2025
       title: 'CLUB MEETING',
-      location: '@LP',
+      location: '@WRIG',
       time: '1:00PM-4:00PM',
     },
     {
       date: new Date(2025, 9, 29), // Oct 29 2025
       title: 'CLUB MEETING',
-      location: '@LP',
+      location: '@WRIG',
       time: '1:00PM-4:00PM',
     },
     {
       date: new Date(2025, 9, 31), // Oct 31 2025
       title: 'CLUB MEETING',
-      location: '@WRIG',
+      location: '@LP',
       time: '1:00PM-4:00PM',
     },
     {
