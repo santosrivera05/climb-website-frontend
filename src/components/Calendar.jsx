@@ -119,6 +119,121 @@ const Calendar = () => {
       title: 'CLUB MEETING',
       location: '@WRIG',
       time: '1:00PM-4:00PM',
+    },
+    // Winter Quarter
+    {
+      date: new Date(2026, 0, 9), // Jan 9 2026
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2026, 0, 14), // Jan 14 2026
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2026, 0, 16), // Jan 16 2026
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2026, 0, 21), // Jan 21 2026
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2026, 0, 23), // Jan 23 2026
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2026, 0, 28), // Jan 28 2026
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2026, 0, 30), // Jan 30 2026
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2026, 1, 4), // Feb 4 2026
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2026, 1, 6), // Feb 6 2026
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2026, 1, 11), // Feb 11 2026
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2026, 1, 13), // Feb 13 2026
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2026, 1, 18), // Feb 18 2026
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2026, 1, 20), // Feb 20 2026
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2026, 1, 25), // Feb 25 2026
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2026, 1, 27), // Feb 27 2026
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2026, 2, 4), // Mar 4 2026
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2026, 2, 6), // Mar 6 2026
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2026, 2, 11), // Mar 11 2026
+      title: 'CLUB MEETING',
+      location: 'WRIG',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2026, 2, 13), // Mar 13 2026
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '1:00PM-4:00PM',
     }
   ];
 

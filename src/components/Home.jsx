@@ -124,7 +124,7 @@ function Home() {
                 <div className="bg-gray-200 h-60 flex items-center justify-center">
                   <img 
                   className="object-cover h-full w-full"
-                  src="../../img/santos.jpg"
+                  src="../../img/new-santos.JPG"
                   alt="Santos Rivera"
                   />
                 </div>
