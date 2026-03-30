@@ -234,7 +234,128 @@ const Calendar = () => {
       title: 'CLUB MEETING',
       location: '@LP',
       time: '1:00PM-4:00PM',
-    }
+    },
+    {
+      date: new Date(2026, 3, 1), // Apr 1 2026
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2026, 3, 3), // Apr 3 2026
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2026, 3, 8), // Apr 8 2026
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2026, 3, 10), // Apr 10 2026
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2026, 3, 15), // Apr 15 2026
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2026, 3, 17), // Apr 17 2026
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2026, 3, 22), // Apr 22 2026
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2026, 3, 24), // Apr 24 2026
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2026, 3, 29), // Apr 29 2026
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2026, 4, 1), // May 1 2026
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2026, 4, 6), // May 6 2026
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2026, 4, 8), // May 8 2026
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2026, 4, 13), // May 13 2026
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2026, 4, 15), // May 15 2026
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2026, 4, 20), // May 20 2026
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2026, 4, 22), // May 22 2026
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2026, 4, 27), // May 27 2026
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2026, 4, 29), // May 29 2026
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '1:00PM-4:00PM',
+    },
+    {
+      date: new Date(2026, 5, 3), // Jun 3 2026
+      title: 'CLUB MEETING',
+      location: '@WRIG',
+      time: '6:00PM-9:00PM',
+    },
+    {
+      date: new Date(2026, 5, 5), // Jun 5 2026
+      title: 'CLUB MEETING',
+      location: '@LP',
+      time: '1:00PM-4:00PM',
+    },
+
   ];
 
   const start = startOfWeek(currentWeek, { weekStartsOn: 0 }); // Sunday start
