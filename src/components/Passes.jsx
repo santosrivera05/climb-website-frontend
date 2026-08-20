@@ -70,7 +70,7 @@ function Passes() {
     };
 
     return (
-        <div className="flex flex-col lg:flex-row justify-between bg-[#EEFCFF] min-h-screen">
+        <div className="flex flex-col lg:flex-row lg:items-start justify-between bg-[#EEFCFF] min-h-screen">
 
             {/* Pass Count */}
             <div className="flex flex-col items-center lg:ml-16 gap-8 mt-12 text-center staatliches">
@@ -131,8 +131,8 @@ function Passes() {
             </div>
 
              {/* Purchase Boxes */}
-            <div className="flex flex-col items-center justify-center gap-6 mt-8 lg:mt-0 lg:mr-24 staatliches text-xl sm:text-2xl lg:text-3xl w-full px-4">
-            <div className="border-2 border-[#233EA1] px-4 py-6 text-center w-full max-w-sm sm:max-w-md lg:w-[120%]">
+            <div className="flex flex-col items-center justify-center gap-6 mt-8 lg:mt-12 lg:mr-24 staatliches text-xl sm:text-2xl lg:text-3xl w-full px-4">
+            <div className="border-2 border-[#233EA1] mt-8 px-4 py-6 text-center w-full max-w-sm sm:max-w-md lg:w-[120%]">
                 <p className="mb-4">Purchase Passes</p>
                 <select
                 className="border-2 border-[#233EA1] px-2 py-1 hover:cursor-pointer w-full sm:w-auto"

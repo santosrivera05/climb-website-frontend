@@ -30,12 +30,15 @@ function Navbar() {
   return (
     <nav className="navbar relative flex items-center p-1 text-white text-2xl h-16" >
 
-      {auth?.user && auth.user.Role === 5150 && (
-        <div className="exec-container absolute top-0 left-0 h-full pl-4 pr-48 flex items-center z-10">
+        {/* Exec Link or Title */}
+      
+      {auth?.user && auth.user.Role === 5150 ? 
+        <div className="exec-container absolute top-0 left-0 h-full pl-4 pr-48 flex items-center z-10 text-3xl">
           <a className="hover:scale-105 cursor-pointer" onClick={() => navigate('/exec')}>Exec</a>
         </div>
-      )}
+      : null}
 
+        {/* Page Links */}
       <div className="hidden flex-1 md:flex gap-10 justify-center text-center">
         <a onClick={() => navigate('/home')} className="navbar-links hover:scale-105">HOME</a>
         <a onClick={() => navigate('/passes')} className="navbar-links hover:scale-105">PASSES</a>
