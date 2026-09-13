@@ -289,6 +289,22 @@ function Home() {
               </div>
             </div>
 
+            {/* Elliott */}
+            <div className="bg-white shadow-lg w-60">
+              <div className="bg-gray-200 h-60 flex items-center justify-center">
+                <img
+                  className="object-cover h-full w-full"
+                  src="../../img/elliot-sorato.png"
+                  alt="Elliott Yoo"
+                />
+              </div>
+              <div className="bg-yellow-100 py-4 px-2 tracking-wide">
+                <p className="text-lg">ELLIOTT YOO</p>
+                <p className="text-med">VICE PRESIDENT</p>
+                <p className="text-xs">EYOO7@DEPAUL.EDU</p>
+              </div>
+            </div>
+
             {/* Ellie */}
             <div className="bg-white shadow-lg w-60">
               <div className="bg-gray-200 h-60 flex items-center justify-center overflow-hidden">
