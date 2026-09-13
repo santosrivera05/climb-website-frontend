@@ -35,7 +35,7 @@ function Passes() {
         const response = await axiosPrivate.post(`${import.meta.env.VITE_BACKEND_URL}/purchase-passes`, {
             email: auth?.user?.Email,
             passes: passQuantity,
-            price: passQuantity *15 // Pass price set to $15 each
+            price: passQuantity *18 // Pass price set to $18 each
         });
 
         const session = await response.data;
@@ -70,7 +70,8 @@ function Passes() {
     };
 
     return (
-        <div className="flex flex-col lg:flex-row lg:items-start justify-between bg-[#EEFCFF] min-h-screen">
+        <div className="bg-[#EEFCFF] min-h-screen">
+        <div className="flex flex-col lg:flex-row lg:items-start justify-between">
 
             {/* Pass Count */}
             <div className="flex flex-col items-center lg:ml-16 gap-8 mt-12 text-center staatliches">
@@ -139,16 +140,16 @@ function Passes() {
                 value={passQuantity}
                 onChange={handlePassQuantityChange}
                 >
-                <option value={1}>1 Pass - $15.00</option>
-                <option value={2}>2 Passes - $30.00</option>
-                <option value={3}>3 Passes - $45.00</option>
-                <option value={4}>4 Passes - $60.00</option>
-                <option value={5}>5 Passes - $75.00</option>
-                <option value={6}>6 Passes - $90.00</option>
-                <option value={7}>7 Passes - $105.00</option>
-                <option value={8}>8 Passes - $120.00</option>
-                <option value={9}>9 Passes - $135.00</option>
-                <option value={10}>10 Passes - $150.00</option>
+                <option value={1}>1 Pass - $18.00</option>
+                <option value={2}>2 Passes - $36.00</option>
+                <option value={3}>3 Passes - $54.00</option>
+                <option value={4}>4 Passes - $72.00</option>
+                <option value={5}>5 Passes - $90.00</option>
+                <option value={6}>6 Passes - $108.00</option>
+                <option value={7}>7 Passes - $126.00</option>
+                <option value={8}>8 Passes - $144.00</option>
+                <option value={9}>9 Passes - $162.00</option>
+                <option value={10}>10 Passes - $180.00</option>
                 </select>
                 {auth?.user?.Dues === 0 || !auth?.user ? (
                 <button
@@ -192,6 +193,69 @@ function Passes() {
                 </div>
             </div>
             </div>
+        </div>
+
+            {/* How It Works Info Section */}
+            <section className="px-4 sm:px-8 pb-16 md:pb-24 pt-4 max-w-5xl mx-auto text-[#011638]">
+
+                <div className="flex items-center justify-center mb-8 md:mb-10">
+                    <div className="h-px flex-1 max-w-24 sm:max-w-32 bg-[#011638]"></div>
+                    <h2 className="staatliches mx-4 text-center text-3xl md:text-5xl tracking-wide">HOW IT WORKS</h2>
+                    <div className="h-px flex-1 max-w-24 sm:max-w-32 bg-[#011638]"></div>
+                </div>
+
+                {/* Steps */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-10">
+
+                    <div className="bg-white border-2 border-[#233EA1] p-6 flex flex-col items-center text-center">
+                        <div className="staatliches bg-[#011638] text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl mb-4 shrink-0">1</div>
+                        <p className="staatliches text-xl md:text-2xl tracking-wide mb-2">PAY QUARTERLY DUES</p>
+                        <p className="text-base md:text-lg leading-snug">
+                            To come to any club meeting, you must first purchase quarterly dues for <span className="font-bold">$10</span>.
+                        </p>
+                    </div>
+
+                    <div className="bg-white border-2 border-[#233EA1] p-6 flex flex-col items-center text-center">
+                        <div className="staatliches bg-[#011638] text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl mb-4 shrink-0">2</div>
+                        <p className="staatliches text-xl md:text-2xl tracking-wide mb-2">GET A DAY PASS</p>
+                        <p className="text-base md:text-lg leading-snug">
+                            Each club meeting requires at least one day pass. You can buy multiple at a time so you're covered for future meetings.
+                        </p>
+                    </div>
+
+                    <div className="bg-white border-2 border-[#233EA1] p-6 flex flex-col items-center text-center">
+                        <div className="staatliches bg-[#011638] text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl mb-4 shrink-0">3</div>
+                        <p className="staatliches text-xl md:text-2xl tracking-wide mb-2">CHECK IN AT THE DESK</p>
+                        <p className="text-base md:text-lg leading-snug">
+                            At the meeting, check in with the front desk and let them know you're here for DePaul Climbing. They'll confirm your dues and pass.
+                        </p>
+                    </div>
+
+                </div>
+
+                {/* Movement Members + What's Included */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+
+                    <div className="bg-[#011638] text-white p-6 flex flex-col items-center text-center">
+                        <p className="staatliches text-xl md:text-2xl tracking-wide mb-2 text-[#D7263D]">HAVE A MOVEMENT MEMBERSHIP?</p>
+                        <p className="text-base md:text-lg leading-snug">
+                            If you have a Movement Gyms membership, you do <span className="font-bold">not</span> need to buy day passes to attend club meetings. You'll still need to pay quarterly dues.
+                        </p>
+                    </div>
+
+                    <div className="bg-white border-4 border-[#011638] p-6 flex flex-col items-center text-center">
+                        <p className="staatliches text-xl md:text-2xl tracking-wide mb-3">YOUR DAY PASS INCLUDES</p>
+                        <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+                            <span className="staatliches bg-[#EEFCFF] border-2 border-[#233EA1] px-3 py-1 text-base md:text-xl tracking-wide">RENTAL SHOES</span>
+                            <span className="staatliches bg-[#EEFCFF] border-2 border-[#233EA1] px-3 py-1 text-base md:text-xl tracking-wide">CHALK</span>
+                            <span className="staatliches bg-[#EEFCFF] border-2 border-[#233EA1] px-3 py-1 text-base md:text-xl tracking-wide">HARNESS</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
         </div>
         );
 }

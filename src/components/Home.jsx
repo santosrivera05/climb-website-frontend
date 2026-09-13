@@ -167,7 +167,7 @@ function Home() {
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-14 mb-10">
           <div className="staatliches bg-[#011638] text-white rounded-full w-40 h-40 sm:w-48 sm:h-48 flex flex-col items-center justify-center rotate-[-6deg] shadow-lg shrink-0">
-            <p className="text-3xl sm:text-4xl md:text-5xl">$15</p>
+            <p className="text-3xl sm:text-4xl md:text-5xl">$18</p>
             <p className="text-xs sm:text-sm tracking-widest mt-1">DAY PASS</p>
           </div>
           <div className="staatliches bg-[#233EA1] text-white rounded-full w-40 h-40 sm:w-48 sm:h-48 flex flex-col items-center justify-center rotate-[5deg] shadow-lg shrink-0">
@@ -193,6 +193,22 @@ function Home() {
           >
             View Passes
           </button>
+        </div>
+
+        {/* GroupMe */}
+        <div className="mt-12 md:mt-16 border-4 border-dashed border-[#011638] bg-white px-6 py-8 max-w-2xl mx-auto">
+          <h3 className="staatliches text-2xl md:text-4xl tracking-wide mb-3">JOIN OUR GROUPME</h3>
+          <p className="text-base md:text-lg max-w-md mx-auto mb-6 leading-snug">
+            All club communications happen through our GroupMe.
+          </p>
+          <a
+            href="https://web.groupme.com/join_group/71261546/cj9QzLbr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="staatliches inline-block bg-[#233EA1] text-white px-8 py-3 text-lg md:text-xl tracking-wide shadow-md hover:scale-105 transition-transform cursor-pointer"
+          >
+            Join the GroupMe
+          </a>
         </div>
       </section>
 
