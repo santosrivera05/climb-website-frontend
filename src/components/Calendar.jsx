@@ -206,9 +206,6 @@ const Calendar = () => {
                 <div className="h-0.5 w-48 bg-[#233EA1]"></div>
                 </div>
 
-                <div className="flex text-center mt-6 w-1/2">
-                    <p className="text-lg">*for Those taking the CTA, we meet around 15 minutes before club starts at the fullerton station  to take the train together! send a text into the groupme so we know who's coming.</p>
-                </div>
             </div>
 
                 <div className="flex flex-col lg:mr-72 lg:ml-72">

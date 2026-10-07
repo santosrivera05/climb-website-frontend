@@ -177,7 +177,7 @@ function Home() {
         </div>
 
         <p className="text-lg md:text-xl max-w-xl mx-auto mb-6">
-          You'll need an account to buy day passes or pay dues — it only takes a minute.
+          You'll need an account to buy day passes or pay dues. It only takes a minute to sign up.
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -308,12 +308,12 @@ function Home() {
             {/* Ellie */}
             <div className="bg-white shadow-lg w-60">
               <div className="bg-gray-200 h-60 flex items-center justify-center overflow-hidden">
-                <img src="../../img/ellie-profile.jpg" alt="Ellie Kim" className="object-cover h-full w-full" />
+                <img src="../../img/christian-headshot.JPG" alt="Christian Manabat" className="object-cover h-full w-full" />
               </div>
               <div className="bg-yellow-100 py-4 px-2 tracking-wide">
-                <p className="text-lg">ELLIE KIM</p>
+                <p className="text-lg">CHRISTIAN MANABAT</p>
                 <p className="text-med">TREASURER</p>
-                <p className="text-xs">EKIM79@DEPAUL.EDU</p>
+                <p className="text-xs">CMANABAT@DEPAUL.EDU</p>
               </div>
             </div>
           </div>

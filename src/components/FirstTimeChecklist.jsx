@@ -93,7 +93,7 @@ const FirstTimeChecklist = () => {
             </div>
             <div className="flex flex-col gap-3 text-base md:text-lg leading-snug">
               <p>
-                We rotate between Movement Lincoln Park and Movement Wrigleyville — check the
+                We rotate between Movement Lincoln Park and Movement Wrigleyville. Check the
                 calendar so you show up at the right one!
               </p>
             </div>
