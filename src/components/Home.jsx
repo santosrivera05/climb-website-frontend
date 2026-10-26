@@ -256,12 +256,12 @@ function Home() {
             <div className="h-px w-48 bg-[#011638]"></div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-8">
+          <div className="flex flex-wrap justify-center gap-8 mt-8 max-w-[50rem] mx-auto">
             {/* Lucas */}
             <div className="bg-white shadow-lg w-60">
               <div className="bg-gray-200 h-60 flex items-center justify-center">
                 <img
-                  src="../../img/lucas.jpg"
+                  src="../../img/lucas-headshot.png"
                   alt="Lucas Pazen"
                   className="object-cover h-full w-full"
                 />
@@ -278,7 +278,7 @@ function Home() {
               <div className="bg-gray-200 h-60 flex items-center justify-center">
                 <img
                   className="object-cover h-full w-full"
-                  src="../../img/new-santos.JPG"
+                  src="../../img/santos-mog.png"
                   alt="Santos Rivera"
                 />
               </div>
@@ -305,7 +305,7 @@ function Home() {
               </div>
             </div>
 
-            {/* Ellie */}
+            {/* Christian */}
             <div className="bg-white shadow-lg w-60">
               <div className="bg-gray-200 h-60 flex items-center justify-center overflow-hidden">
                 <img src="../../img/christian-headshot.JPG" alt="Christian Manabat" className="object-cover h-full w-full" />
@@ -316,6 +316,32 @@ function Home() {
                 <p className="text-xs">CMANABAT@DEPAUL.EDU</p>
               </div>
             </div>
+
+            {/* Ian */}
+            <div className="bg-white shadow-lg w-60">
+              <div className="bg-gray-200 h-60 flex items-center justify-center overflow-hidden">
+                <img src="../../img/ian-pfp.png" alt="Ian Tucker" className="object-cover h-full w-full" />
+              </div>
+              <div className="bg-yellow-100 py-4 px-2 tracking-wide">
+                <p className="text-lg">IAN TUCKER</p>
+                <p className="text-med">SOCIAL MEDIA</p>
+                <p className="text-xs">ITUCKER1@DEPAUL.EDU</p>
+              </div>
+            </div>
+
+            {/* Owen */}
+            <div className="bg-white shadow-lg w-60">
+              <div className="bg-gray-200 h-60 flex items-center justify-center overflow-hidden">
+                <img src="../../img/owen-pfp.png" alt="Owen Purcell" className="object-cover h-full w-full" />
+              </div>
+              <div className="bg-yellow-100 py-4 px-2 tracking-wide">
+                <p className="text-lg">OWEN PURCELL</p>
+                <p className="text-med">SOCIAL MEDIA</p>
+                <p className="text-xs">OPURCELL@DEPAUL.EDU</p>
+              </div>
+            </div>
+
+
           </div>
         </div>
 
